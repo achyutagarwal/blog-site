@@ -31,7 +31,7 @@ const Post = mongoose.model("Post", postSchema);
 app.get("/", function (req, res) {
   Post.find({}, function (err, posts) {
     res.render("home", {
-      startingContent: homeStartingContent,
+      homecontent: homeStartingContent,
       posts: posts,
     });
   });
@@ -66,11 +66,11 @@ app.get("/posts/:blogPost", function (req, res) {
 });
 
 app.get("/about", function (req, res) {
-  res.render("about", { aboutContent: aboutContent });
+  res.render("about", { aboutcontent: aboutContent });
 });
 
 app.get("/contact", function (req, res) {
-  res.render("contact", { contactContent: contactContent });
+  res.render("contact", { contactcontent: contactContent });
 });
 
 app.listen(3000, function () {
